@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>infulence</title>
+</head>
+
+<body>
+    <main class="wrapper">
+        <img src="./images/infulence.jpg" alt="">
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: false,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    var swiper1 = new Swiper(".cases", {
+            loop: true,
+            autoplay: true,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    document.addEventListener('DOMContentLoaded', function () {
+        var yourElement = document.querySelector('.site-header');
+
+        // Add the class on scroll
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+            // Adjust the value (e.g., 100) based on when you want the class to be added
+            if (scrollPosition > 20) {
+                // Add the class 'scrolled' to the element
+                yourElement.classList.add('fixed-header');
+            } else {
+                // Remove the class if the scroll position is less than 100
+                yourElement.classList.remove('fixed-header');
+            }
+        });
+    });
+</script>
+
+</html>
